@@ -1,4 +1,8 @@
 function getIssues() {
+  const repo = 'https://github.com/jenhaddock/js-ajax-fetch-lab-v-000'
+  fetch(repo)
+  .then(resp => resp.json())
+  .then(json => showIssues(json));
 }
 
 function showIssues(json) {
@@ -18,5 +22,12 @@ function forkRepo() {
 function getToken() {
   //change to your token to run in browser, but set
   //back to '' before committing so all tests pass
+  const token = 'e1c3668f22a2804516855f7b33bc0920b1a28e48';
+
+  fetch('https://api.github.com/user/repos', {
+    headers: {
+    Authorization: `token ${token}`
+  }
+ }).then(res => res.json()).then(json => console.log(json));
   return ''
 }
