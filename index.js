@@ -7,9 +7,6 @@ function getIssues() {
   .then(json => showIssues(json));
 }
 
-function showIssues(json) {
-}
-
 function createIssue() {
 }
 
@@ -24,6 +21,10 @@ function forkRepo() {
     headers: {
     Authorization: `token ${token}`
   }}).then(res => res.json()).then(showForkedRepo(data))
+}
+
+function showForkedRepo(){
+  
 }
 
 function getToken() {
