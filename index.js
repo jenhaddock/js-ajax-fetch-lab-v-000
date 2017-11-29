@@ -20,11 +20,11 @@ function forkRepo() {
     method: 'POST',
     headers: {
     Authorization: `token ${token}`
-  }}).then(res => res.json()).then(showForkedRepo(data))
+  }}).then(res => res.json()).then(data => showForkedRepo(data))
 }
 
 function showForkedRepo(){
-  
+
 }
 
 function getToken() {
