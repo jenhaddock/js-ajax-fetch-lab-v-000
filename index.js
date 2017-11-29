@@ -2,7 +2,10 @@
 
 function getIssues() {
   const repo = 'https://github.com/jenhaddock/js-ajax-fetch-lab-v-000'
-  fetch(repo)
+  fetch(`https://api.github.com/repos/${repo}/issues`, {
+    headers: {
+    Authorization: `token ${token}`
+  }})
   .then(resp => resp.json())
   .then(json => showIssues(json));
 }
