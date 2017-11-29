@@ -24,7 +24,7 @@ function forkRepo() {
 }
 
 function showForkedRepo(){
-
+  $("#results").append(`<p><a href="${res.html_url}">${res.html_url}</a></p>`)
 }
 
 function getToken() {
